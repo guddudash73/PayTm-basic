@@ -15,7 +15,7 @@ export function Dashboard() {
     async function getBalance() {
       try {
         const response = await axios.get(
-          "http://13.61.25.202:3000/api/v1/account/balance",
+          "http://13.53.39.182:3000/api/v1/account/balance",
           {
             headers: {
               authorization: `Bearer ${token}`,
