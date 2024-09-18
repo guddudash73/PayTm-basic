@@ -31,7 +31,7 @@ export function Signin() {
           onclick={async () => {
             try {
               const response = await axios.post(
-                "http://localhost:3000/api/v1/user/signin",
+                "http://13.61.25.202:3000/api/v1/user/signin",
                 {
                   username,
                   password,
@@ -39,6 +39,7 @@ export function Signin() {
               );
               localStorage.setItem("token", response.data.token);
               navigate(`/dashboard/${response.data.firstName}`);
+              console.log(response);
             } catch (err) {
               const errJson = JSON.stringify(err.response.data.message);
               alert(errJson);

@@ -44,7 +44,7 @@ export function Signup() {
           onclick={async () => {
             try {
               const response = await axios.post(
-                "http://localhost:3000/api/v1/user/signup",
+                "http://13.61.25.202:3000/api/v1/user/signup",
                 {
                   username,
                   firstName,
@@ -53,7 +53,8 @@ export function Signup() {
                 }
               );
               localStorage.setItem("token", response.data.token);
-              navigate("/dashboard");
+              navigate(`/dashboard/${response.data.firstName}`);
+              console.log(response);
             } catch (err) {
               const jsonData = JSON.stringify(err.response.data.message);
               alert(jsonData);

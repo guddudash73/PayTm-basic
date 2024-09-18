@@ -42,7 +42,7 @@ export function SendMoney() {
             onClick={() => {
               axios
                 .post(
-                  "http://localhost:3000/api/v1/account/transfer",
+                  "http://13.61.25.202:3000/api/v1/account/transfer",
                   {
                     to,
                     amount,
